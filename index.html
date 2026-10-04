@@ -10,10 +10,20 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<div class="teaser">
+  <img class="teaser-mark" src="assets/trademark3.jpg" alt="Gold eagle breaking through a gold ring" />
+  <p class="kicker">F.G.I.™ Forensic Accounting Firm</p>
+  <h1>Coming soon.</h1>
+  <p>The site is in review. The firm can still be reached.</p>
+  <div class="reach">
+    <a class="reach-link" href="tel:+13059469308">☎ 305-946-9308</a>
+    <a class="reach-link" href="mailto:fgifafirm@outlook.com">✉ fgifafirm@outlook.com</a>
+  </div>
+</div>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header" id="site-header">
   <div class="brand">
-    <a href="#top" aria-label="F.G.I. home"><img src="assets/trademarklogotrans2.png" alt="Eagle breaking through a gold ring" /></a>
+    <a href="#top" aria-label="F.G.I. home"><img src="assets/trademark3.jpg" alt="Eagle breaking through a gold ring" /></a>
     <a class="brand-domain" href="https://fgifafirm.com">FGIFAFIRM.COM</a>
   </div>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -24,11 +34,11 @@
     <a href="#open" data-place="contact">Contact</a>
   </nav>
 </header>
-<main id="main">
-  <section class="hero" id="top">
+<main id="main" class="card-stack">
+  <section class="sheet hero" id="top">
     <div class="wordmark">
-        <img src="assets/trademark4.jpg" alt="Gold eagle breaking through a gold ring" />
-      </div>
+      <img src="assets/trademark4.jpg" alt="Gold eagle breaking a ring beside the F.G.I. wordmark" />
+    </div>
     <div class="hero-copy">
       <p class="kicker">Record · Trace · Testify</p>
       <h1 class="ai-type">Integrity that can be examined.</h1>
@@ -40,10 +50,10 @@
       <p class="fine">Confidential intake is opening soon</p>
     </div>
   </section>
-  <div class="ribbon" aria-label="Firm principles">
+  <div class="sheet ribbon" aria-label="Firm principles">
     <span>Integrity</span><span>Evidence</span><span>Judgment</span>
   </div>
-  <section class="docket" id="open">
+  <section class="sheet docket" id="open">
     <div class="docket-head">
       <p class="kicker">The firm</p>
       <h2>Three places to start.</h2>
@@ -133,7 +143,7 @@
       </div>
     </div>
   </section>
-  <section class="band services" id="channels">
+  <section class="sheet band services" id="channels">
     <div class="section-head">
       <p class="kicker">Education</p>
       <h2>The teaching lives on three platforms.</h2>
@@ -172,6 +182,25 @@
     <span><a class="legal-domain" href="https://fgifafirm.com">FGIFAFIRM.COM</a> · Site by VSIT Solutions and More LLC</span>
   </div>
 </footer>
+<script>
+(function () {
+  var cards = document.querySelectorAll(".sheet, .docket-tab, .factors li, .ledger article, .channel");
+  cards.forEach(function (card) { card.classList.add("shuffle"); });
+  if (!("IntersectionObserver" in window)) {
+    cards.forEach(function (card) { card.classList.add("is-in"); });
+    return;
+  }
+  var watch = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-in");
+        watch.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(function (card) { watch.observe(card); });
+})();
+</script>
 <script src="main.js"></script>
 </body>
 </html>
