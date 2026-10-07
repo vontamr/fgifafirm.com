@@ -56,7 +56,7 @@ h1, h2 { font-size: clamp(46px, 6vw, 80px); }
 .people {
   background:
     linear-gradient(180deg, rgba(7, 20, 36, 0.55), rgba(125, 18, 36, 0.45)),
-    url("assets/florida.jpg") center / cover no-repeat;
+    url("assets/sunsetbackground.jpg") center / cover no-repeat;
 }
 .roster, .chooser { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0; }
 .roster article, .chooser button {
