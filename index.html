@@ -12,41 +12,41 @@
 <body>
 <header class="site-header">
   <div class="brand">
-    <a href="#top" data-go="0"><img src="assets/trademarklogotrans2.png" alt="Eagle breaking through a gold ring" /></a>
+    <a href="#top"><img src="assets/trademarklogotrans2.png" alt="Eagle breaking through a gold ring" /></a>
     <a class="brand-domain" href="https://fgifafirm.com">FGIFAFIRM.COM</a>
   </div>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav class="nav" id="site-nav">
-    <a href="#work" data-go="3">Services</a>
-    <a href="#people" data-go="2">People</a>
-    <a href="#contact" data-go="4">Contact</a>
+    <a href="#work">Services</a>
+    <a href="#people">People</a>
+    <a href="#contact">Contact</a>
   </nav>
   <p class="where" id="where">01 Home</p>
 </header>
-<main id="reel">
-  <section class="panel hero" id="top" data-label="01 Home">
+<main>
+  <section class="float-card hero" id="top" data-label="01 Home">
     <div>
       <p class="kicker">Record · Trace · Testify</p>
       <h1>Integrity that can be examined.</h1>
       <p>Future-focused technology, guided by human insight. That’s the power of FGI.</p>
       <div class="actions">
-        <a class="btn" href="#work" data-go="3">See the work</a>
-        <a class="btn gold" href="tel:+13059469308">Call 305-946-9308</a>
+        <a class="btn" href="#work">See the work</a>
+        <a class="btn gold" href="tel:+18774264718">Call 1-877-426-4718</a>
       </div>
     </div>
     <img class="wordmark" src="assets/trademark4.jpg" alt="Gold eagle breaking a ring beside the F.G.I. wordmark" />
   </section>
-  <section class="panel split" data-label="02 The point">
+  <section class="float-card split" data-label="02 The point">
     <div class="red-panel">
       <p class="kicker">The point</p>
       <h2>The power of being understood.</h2>
-      <a class="btn gold" href="#people" data-go="2">Meet the people</a>
+      <a class="btn gold" href="#people">Meet the people</a>
     </div>
     <div class="gold-panel">
       <p>Take charge of change and shape what’s next, with the team behind you.</p>
     </div>
   </section>
-  <section class="panel people" id="people" data-label="03 People">
+  <section class="float-card people" id="people" data-label="03 People">
     <p class="kicker">The people</p>
     <h2>Meet the people behind FGI.</h2>
     <div class="roster">
@@ -55,37 +55,40 @@
       <article><strong>Forensic accountant</strong><em>The records, rebuilt</em><span>The file, rebuilt from the records.</span></article>
       <article><strong>Supporting staff</strong><em>The firm behind the experts</em><span>The matter, kept moving.</span></article>
     </div>
-    <a class="btn" href="#contact" data-go="4">Talk to the firm</a>
+    <a class="btn" href="#contact">Talk to the firm</a>
   </section>
-  <section class="panel work" id="work" data-label="04 Services">
+  <section class="float-card work" id="work" data-label="04 Services">
     <p class="kicker">Services</p>
     <h2>Choose the file.</h2>
-    <div class="chooser" id="chooser">
-      <button type="button" data-service="investigations">Financial Investigations</button>
-      <button type="button" data-service="compliance">Corporate Compliance</button>
-      <button type="button" data-service="risk">Risk Management</button>
-      <button type="button" data-service="disputes">Dispute Resolution</button>
-      <button type="button" data-service="litigation">Litigation Support</button>
-      <button type="button" data-service="assurance">Assurance</button>
-      <button type="button" data-service="tax">Tax</button>
-      <button type="button" data-service="advisory">Advisory Services</button>
+    <p class="file-note">One matter at a time. The record opens under the name.</p>
+    <div class="file-list" id="chooser">
+      <button type="button" data-service="investigations"><em>01</em><strong>Financial Investigations</strong><span>Follow the money until the discrepancy has a name.</span></button>
+      <button type="button" data-service="compliance"><em>02</em><strong>Corporate Compliance</strong><span>Checked against the rule, not only the story.</span></button>
+      <button type="button" data-service="risk"><em>03</em><strong>Risk Management</strong><span>See the exposure before it becomes the matter.</span></button>
+      <button type="button" data-service="disputes"><em>04</em><strong>Dispute Resolution</strong><span>Negotiations, mediations, and settlements.</span></button>
+      <button type="button" data-service="litigation"><em>05</em><strong>Litigation Support</strong><span>Analysis and expert testimony.</span></button>
+      <button type="button" data-service="assurance"><em>06</em><strong>Assurance</strong><span>A conclusion another professional can examine.</span></button>
+      <button type="button" data-service="tax"><em>07</em><strong>Tax</strong><span>The tax question, read with a forensic eye.</span></button>
+      <button type="button" data-service="advisory"><em>08</em><strong>Advisory Services</strong><span>The next move for a middle-market leader.</span></button>
     </div>
     <div class="picked" id="picked">
+      <p class="kicker">Open file</p>
       <h3 id="picked-title">Select a service.</h3>
       <p id="picked-copy">The file opens here. Then you can take it to the firm.</p>
-      <a class="btn" href="#contact" data-go="4">Take this to contact</a>
+      <a class="btn" href="#contact">Take this to contact</a>
     </div>
   </section>
-  <section class="panel contact" id="contact" data-label="05 Contact">
+  <section class="float-card contact" id="contact" data-label="05 Contact">
     <p class="kicker">Contact</p>
     <h2>Speak to the firm.</h2>
     <div class="actions">
-      <a class="btn gold" href="tel:+13059469308">305-946-9308</a>
+      <a class="btn gold" href="tel:+18774264718">1-877-426-4718</a>
       <a class="btn" href="mailto:fgifafirm@outlook.com">fgifafirm@outlook.com</a>
     </div>
     <form id="intake">
       <input name="name" placeholder="Name" required />
       <input name="email" type="email" placeholder="Email" required />
+      <label class="sms"><input name="sms" type="checkbox" value="yes" /> I agree to receive SMS from F.G.I. about appointment reminders, file updates, and account notices. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. <a href="#privacy" data-sheet="privacy">Privacy policy</a> and <a href="#terms" data-sheet="terms">SMS terms</a>.</label>
       <button type="submit">Reserve a place</button>
     </form>
     <p class="form-success" id="thanks">You are on the list.</p>
@@ -94,8 +97,30 @@
 <footer class="site-footer">
   <span>F.G.I.™ Forensic Accounting Firm</span>
   <a href="https://fgifafirm.com">FGIFAFIRM.COM</a>
+  <a href="#privacy" data-sheet="privacy">Privacy policy</a>
+  <a href="#terms" data-sheet="terms">SMS terms</a>
   <span>Site by VSIT Solutions and More LLC</span>
 </footer>
+<div class="sheet" id="privacy" hidden>
+  <div class="sheet-card">
+    <button type="button" data-close>Close</button>
+    <p class="kicker">Privacy</p>
+    <h2>Privacy policy</h2>
+    <p>F.G.I. Forensic Accounting Firm collects the name, email address, organization, phone number, and the note a visitor submits on this site. If a visitor opts in to text messages, the firm also keeps that mobile number and the consent record.</p>
+    <p>The firm uses this information to answer an inquiry, reserve a place on the intake list, and send the messages the visitor agreed to receive. Those messages may include appointment reminders, file updates, and account notices.</p>
+    <p>The firm shares information only with the people who operate this site and the phone or email service used to deliver a message. SMS consent is not shared with third parties or affiliates.</p>
+    <p>A note on this form does not create an engagement. Do not include account numbers.</p>
+  </div>
+</div>
+<div class="sheet" id="terms" hidden>
+  <div class="sheet-card">
+    <button type="button" data-close>Close</button>
+    <p class="kicker">SMS</p>
+    <h2>SMS terms of service</h2>
+    <p>By opting into SMS from a web form or other medium, you are agreeing to receive SMS messages from F.G.I. Forensic Accounting Firm. This includes SMS messages for appointment reminders, file updates, and account notices. Message frequency varies. Message and data rates may apply. See the privacy policy at <a href="https://fgifafirm.com/#privacy">https://fgifafirm.com/#privacy</a>. Message HELP for help. Reply STOP to any message to opt out.</p>
+    <p>For assistance, text HELP or visit <a href="https://fgifafirm.com">https://fgifafirm.com</a>. Visit <a href="https://fgifafirm.com/#privacy">https://fgifafirm.com/#privacy</a> for the privacy policy and <a href="https://fgifafirm.com/#terms">https://fgifafirm.com/#terms</a> for these terms.</p>
+  </div>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
