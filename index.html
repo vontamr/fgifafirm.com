@@ -10,197 +10,92 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="teaser">
-  <img class="teaser-mark" src="assets/trademark3.jpg" alt="Gold eagle breaking through a gold ring" />
-  <p class="kicker">F.G.I.™ Forensic Accounting Firm</p>
-  <h1>Coming soon.</h1>
-  <p>The site is in review. The firm can still be reached.</p>
-  <div class="reach">
-    <a class="reach-link" href="tel:+13059469308">☎ 305-946-9308</a>
-    <a class="reach-link" href="mailto:fgifafirm@outlook.com">✉ fgifafirm@outlook.com</a>
-  </div>
-</div>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header" id="site-header">
+<header class="site-header">
   <div class="brand">
-    <a href="#top" aria-label="F.G.I. home"><img src="assets/trademark3.jpg" alt="Eagle breaking through a gold ring" /></a>
+    <a href="#top" data-go="0"><img src="assets/trademarklogotrans2.png" alt="Eagle breaking through a gold ring" /></a>
     <a class="brand-domain" href="https://fgifafirm.com">FGIFAFIRM.COM</a>
   </div>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav class="nav" id="site-nav">
-    <a href="#top">Home</a>
-    <a href="#open" data-place="about">About</a>
-    <a href="#open" data-place="services">Services</a>
-    <a href="#open" data-place="contact">Contact</a>
+    <a href="#work" data-go="3">Services</a>
+    <a href="#people" data-go="2">People</a>
+    <a href="#contact" data-go="4">Contact</a>
   </nav>
+  <p class="where" id="where">01 Home</p>
 </header>
-<main id="main" class="card-stack">
-  <section class="sheet hero" id="top">
-    <div class="wordmark">
-      <img src="assets/trademark4.jpg" alt="Gold eagle breaking a ring beside the F.G.I. wordmark" />
-    </div>
-    <div class="hero-copy">
+<main id="reel">
+  <section class="panel hero" id="top" data-label="01 Home">
+    <div>
       <p class="kicker">Record · Trace · Testify</p>
-      <h1 class="ai-type">Integrity that can be examined.</h1>
-      <p class="lede">Actionable intelligence for critical decisions, regulatory compliance, and industry standards.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#open" data-place="about">The standard</a>
-        <a class="btn ghost" href="#open" data-place="services">The work</a>
+      <h1>Integrity that can be examined.</h1>
+      <p>Future-focused technology, guided by human insight. That’s the power of FGI.</p>
+      <div class="actions">
+        <a class="btn" href="#work" data-go="3">See the work</a>
+        <a class="btn gold" href="tel:+13059469308">Call 305-946-9308</a>
       </div>
-      <p class="fine">Confidential intake is opening soon</p>
+    </div>
+    <img class="wordmark" src="assets/trademark4.jpg" alt="Gold eagle breaking a ring beside the F.G.I. wordmark" />
+  </section>
+  <section class="panel split" data-label="02 The point">
+    <div class="red-panel">
+      <p class="kicker">The point</p>
+      <h2>The power of being understood.</h2>
+      <a class="btn gold" href="#people" data-go="2">Meet the people</a>
+    </div>
+    <div class="gold-panel">
+      <p>Take charge of change and shape what’s next, with the team behind you.</p>
     </div>
   </section>
-  <div class="sheet ribbon" aria-label="Firm principles">
-    <span>Integrity</span><span>Evidence</span><span>Judgment</span>
-  </div>
-  <section class="sheet docket" id="open">
-    <div class="docket-head">
-      <p class="kicker">The firm</p>
-      <h2>Three places to start.</h2>
-      <p class="section-note">Choose one. The record for that part of the firm opens here.</p>
+  <section class="panel people" id="people" data-label="03 People">
+    <p class="kicker">The people</p>
+    <h2>Meet the people behind FGI.</h2>
+    <div class="roster">
+      <article><strong>CPA</strong><em>Certified Public Accountant</em><span>The license the finding stands on.</span></article>
+      <article><strong>CFE</strong><em>Certified Fraud Examiner</em><span>The fraud examination.</span></article>
+      <article><strong>Forensic accountant</strong><em>The records, rebuilt</em><span>The file, rebuilt from the records.</span></article>
+      <article><strong>Supporting staff</strong><em>The firm behind the experts</em><span>The matter, kept moving.</span></article>
     </div>
-    <div class="docket-tabs" role="tablist">
-      <button class="docket-tab" type="button" data-place="about" id="tab-about"><em>01</em><strong>About</strong><span>What transparency requires.</span></button>
-      <button class="docket-tab" type="button" data-place="services" id="tab-services"><em>02</em><strong>Services</strong><span>Where the expertise is applied.</span></button>
-      <button class="docket-tab" type="button" data-place="contact" id="tab-contact"><em>03</em><strong>Contact</strong><span>Reserve a place. Intake is opening soon.</span></button>
+    <a class="btn" href="#contact" data-go="4">Talk to the firm</a>
+  </section>
+  <section class="panel work" id="work" data-label="04 Services">
+    <p class="kicker">Services</p>
+    <h2>Choose the file.</h2>
+    <div class="chooser" id="chooser">
+      <button type="button" data-service="investigations">Financial Investigations</button>
+      <button type="button" data-service="compliance">Corporate Compliance</button>
+      <button type="button" data-service="risk">Risk Management</button>
+      <button type="button" data-service="disputes">Dispute Resolution</button>
+      <button type="button" data-service="litigation">Litigation Support</button>
+      <button type="button" data-service="assurance">Assurance</button>
+      <button type="button" data-service="tax">Tax</button>
+      <button type="button" data-service="advisory">Advisory Services</button>
     </div>
-    <div class="docket-stage" id="docket-panel">
-      <div class="docket-closed" id="closed">
-        <p class="kicker">File closed</p>
-        <h2>The page is waiting on a selection.</h2>
-        <p>About opens the standard. Services opens the work. Contact opens the inquiry.</p>
-      </div>
-      <div class="docket-body file-panel" id="panel-about" hidden>
-        <p class="docket-mark" aria-hidden="true">01</p>
-        <div class="file-about">
-          <p class="kicker">About</p>
-          <h2>Intelligence a decision can rest on.</h2>
-          <p>FGI provides actionable intelligence essential for critical decision-making, compliance with regulations, and adherence to industry standards.</p>
-          <p class="pull">Three factors influence transparency in forensic accounting.</p>
-          <ol class="factors">
-            <li><em>01</em><strong>Dual roles</strong><span>Consultant and testifying expert. Analysis and testimony from the same standard.</span></li>
-            <li><em>02</em><strong>Cost containment</strong><span>Case management that keeps litigation expense from running ahead of the file.</span></li>
-            <li><em>03</em><strong>One agenda</strong><span>Legal counsel and the forensic team on the same examination, with verification at each step.</span></li>
-          </ol>
-        </div>
-      </div>
-      <div class="docket-body file-panel" id="panel-services" hidden>
-        <p class="docket-mark" aria-hidden="true">02</p>
-        <div class="file-services">
-          <p class="kicker">Services</p>
-          <h2>The work of the firm.</h2>
-          <p class="file-lede">Precise, reliable, and legally sound. Tailored to the matter in front of the firm.</p>
-          <div class="ledger">
-            <article><em>01</em><h3>Litigation support</h3><p>Financial analysis and expert testimony in legal disputes.</p></article>
-            <article><em>02</em><h3>Investigation</h3><p>Forensic examinations that uncover discrepancies and fraudulent activity.</p></article>
-            <article><em>03</em><h3>Dispute resolution</h3><p>Support for negotiations, mediations, and settlements.</p></article>
-            <article><em>04</em><h3>Compliance</h3><p>Work that can be checked against regulations and industry standards.</p></article>
-            <article><em>05</em><h3>Advisory</h3><p>Intelligence a board or counsel can use before a decision is made.</p></article>
-            <article><em>06</em><h3>Business mentorship</h3><p>Guidance for the people who have to live with the finding.</p></article>
-          </div>
-        </div>
-      </div>
-      <div class="docket-body file-panel" id="panel-contact" hidden>
-        <p class="docket-mark" aria-hidden="true">03</p>
-        <div class="desk">
-          <div class="desk-side">
-            <p class="kicker">Contact</p>
-            <h2>Speak to the firm.</h2>
-            <p>Call or write from this device. A note here does not create an engagement. Do not include account numbers.</p>
-            <div class="reach">
-              <a class="reach-link" href="tel:+13059469308" aria-label="Call 305-946-9308">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 4-2 1.5a12 12 0 0 0 6 6L17 13l4 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
-                <span>305-946-9308</span>
-              </a>
-              <a class="reach-link" href="mailto:fgifafirm@outlook.com" aria-label="Email fgifafirm@outlook.com">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 7 9-7"/></svg>
-                <span>fgifafirm@outlook.com</span>
-              </a>
-            </div>
-          </div>
-          <form id="intake">
-            <div class="field"><label for="docket-name">Name</label><input id="docket-name" name="name" required /></div>
-            <div class="field"><label for="docket-email">Email</label><input id="docket-email" name="email" type="email" required /></div>
-            <div class="field"><label for="docket-org">Organization</label><input id="docket-org" name="organization" /></div>
-            <div class="field"><label for="docket-role">You are</label>
-              <select id="docket-role" name="role">
-                <option>Counsel</option>
-                <option>Board or committee</option>
-                <option>Agency</option>
-                <option>Company</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="field"><label for="docket-note">What should the firm know</label><textarea id="docket-note" name="note"></textarea></div>
-            <button class="btn" type="submit">Reserve a place</button>
-          </form>
-          <div class="form-success" id="thanks">
-            <p class="kicker">Reserved</p>
-            <h3>You are on the list.</h3>
-            <p>Intake is not open yet. The firm will use this address when a place is open.</p>
-          </div>
-        </div>
-      </div>
+    <div class="picked" id="picked">
+      <h3 id="picked-title">Select a service.</h3>
+      <p id="picked-copy">The file opens here. Then you can take it to the firm.</p>
+      <a class="btn" href="#contact" data-go="4">Take this to contact</a>
     </div>
   </section>
-  <section class="sheet band services" id="channels">
-    <div class="section-head">
-      <p class="kicker">Education</p>
-      <h2>The teaching lives on three platforms.</h2>
-      <p class="section-note">LinkedIn, YouTube, and X are where the firm explains the work.</p>
+  <section class="panel contact" id="contact" data-label="05 Contact">
+    <p class="kicker">Contact</p>
+    <h2>Speak to the firm.</h2>
+    <div class="actions">
+      <a class="btn gold" href="tel:+13059469308">305-946-9308</a>
+      <a class="btn" href="mailto:fgifafirm@outlook.com">fgifafirm@outlook.com</a>
     </div>
-    <div class="channels">
-      <article class="channel"><h3>LinkedIn</h3><p>Notes for counsel and boards on compliance, testimony, and what an examination can support.</p><a href="https://www.linkedin.com/company/fgifafirm" target="_blank" rel="noreferrer">Open LinkedIn</a></article>
-      <article class="channel"><h3>YouTube</h3><p>Short explainers a client can watch again. The method, the roles, the limits of a finding.</p><a href="https://www.youtube.com/@fgifafirm" target="_blank" rel="noreferrer">Open YouTube</a></article>
-      <article class="channel"><h3>X</h3><p>Timely notices. Check the domain before you open a link.</p><a href="https://x.com/fgifafirm" target="_blank" rel="noreferrer">Open X</a></article>
-    </div>
+    <form id="intake">
+      <input name="name" placeholder="Name" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <button type="submit">Reserve a place</button>
+    </form>
+    <p class="form-success" id="thanks">You are on the list.</p>
   </section>
 </main>
 <footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <strong>F.G.I.™ Forensic Accounting Firm</strong>
-      <p>Actionable intelligence for decision-making, compliance, and industry standards.</p>
-      <p class="reach footer-reach">
-        <a href="tel:+13059469308"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 4-2 1.5a12 12 0 0 0 6 6L17 13l4 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg> 305-946-9308</a>
-        <a href="mailto:fgifafirm@outlook.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 7 9-7"/></svg> fgifafirm@outlook.com</a>
-      </p>
-      <ul class="social-row">
-        <li><a href="https://www.linkedin.com/company/fgifafirm" target="_blank" rel="noreferrer">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@fgifafirm" target="_blank" rel="noreferrer">YouTube</a></li>
-        <li><a href="https://x.com/fgifafirm" target="_blank" rel="noreferrer">X</a></li>
-      </ul>
-    </div>
-    <div>
-      <strong>Visit</strong>
-      <p><a href="#open" data-place="about">About</a><br /><a href="#open" data-place="services">Services</a><br /><a href="#open" data-place="contact">Contact</a></p>
-    </div>
-    <div><strong>Education</strong><p>Teaching is posted on LinkedIn, YouTube, and X.</p></div>
-  </div>
-  <div class="legal">
-    <span>F.G.I.™ is a trademark of the firm. © F.G.I. Forensic Accounting Firm.</span>
-    <span><a class="legal-domain" href="https://fgifafirm.com">FGIFAFIRM.COM</a> · Site by VSIT Solutions and More LLC</span>
-  </div>
+  <span>F.G.I.™ Forensic Accounting Firm</span>
+  <a href="https://fgifafirm.com">FGIFAFIRM.COM</a>
+  <span>Site by VSIT Solutions and More LLC</span>
 </footer>
-<script>
-(function () {
-  var cards = document.querySelectorAll(".sheet, .docket-tab, .factors li, .ledger article, .channel");
-  cards.forEach(function (card) { card.classList.add("shuffle"); });
-  if (!("IntersectionObserver" in window)) {
-    cards.forEach(function (card) { card.classList.add("is-in"); });
-    return;
-  }
-  var watch = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-in");
-        watch.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  cards.forEach(function (card) { watch.observe(card); });
-})();
-</script>
 <script src="main.js"></script>
 </body>
 </html>
