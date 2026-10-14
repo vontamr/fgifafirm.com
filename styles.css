@@ -1483,3 +1483,86 @@ h2 { font-size: clamp(42px, 5vw, 68px); }
     border-bottom-color: rgba(7,20,36,0.15) !important;
   }
 }
+
+/* ========== Header white on People / Contact ========== */
+.site-header {
+  transition: background 0.55s ease, border-color 0.55s ease, color 0.55s ease !important;
+}
+.site-header.is-white {
+  background: linear-gradient(180deg, #ffffff, #f4f1ea) !important;
+  border-bottom-color: #e0b85a !important;
+}
+.site-header.is-white .brand-domain,
+.site-header.is-white .nav a,
+.site-header.is-white .menu-btn,
+.site-header.is-white .lang-btn {
+  color: #071424 !important;
+}
+.site-header.is-white .menu-btn {
+  border-color: #9d1830 !important;
+}
+.site-header.is-white .lang-btn.is-on {
+  color: #9d1830 !important;
+}
+@media (max-width: 800px) {
+  .site-header.is-white .nav {
+    background: #ffffff !important;
+  }
+  .site-header.is-white .nav a {
+    color: #071424 !important;
+    border-bottom-color: rgba(7,20,36,0.12) !important;
+  }
+}
+
+/* ========== Force white header on People / Contact ========== */
+.site-header.is-white {
+  background: #ffffff !important;
+  border-bottom: 4px solid #e0b85a !important;
+}
+.site-header.is-white .brand-domain,
+.site-header.is-white .nav a,
+.site-header.is-white .menu-btn,
+.site-header.is-white .lang-btn {
+  color: #071424 !important;
+}
+.site-header.is-white .menu-btn {
+  border-color: #9d1830 !important;
+}
+@media (max-width: 800px) {
+  .site-header.is-white .nav {
+    background: #ffffff !important;
+  }
+  .site-header.is-white .nav a {
+    color: #071424 !important;
+  }
+}
+
+/* ========== WHITE HEADER — highest priority ========== */
+.site-header.is-white {
+  background: #ffffff !important;
+  background-image: none !important;
+  border-bottom: 4px solid #e0b85a !important;
+}
+.site-header.is-white .header-top {
+  background: transparent !important;
+}
+.site-header.is-white .brand-domain,
+.site-header.is-white .nav a,
+.site-header.is-white .menu-btn,
+.site-header.is-white .lang-btn {
+  color: #071424 !important;
+}
+.site-header.is-white .menu-btn {
+  border-color: #9d1830 !important;
+}
+.site-header.is-white .lang-btn.is-on {
+  color: #9d1830 !important;
+}
+@media (max-width: 800px) {
+  .site-header.is-white .nav {
+    background: #ffffff !important;
+  }
+  .site-header.is-white .nav a {
+    color: #071424 !important;
+  }
+}

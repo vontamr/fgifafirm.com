@@ -425,16 +425,37 @@ try {
   if (saved && translations[saved]) applyLang(saved);
 } catch (e) {}
 
-// ========== Header color shift on The point ==========
+// ========== Header color shifts ==========
 var header = document.querySelector(".site-header");
 var point = document.querySelector(".point-upgrade");
-if (header && point) {
-  function onScroll() {
-    var rect = point.getBoundingClientRect();
-    var trigger = rect.top < window.innerHeight * 0.45 && rect.bottom > 80;
-    header.classList.toggle("is-gold", trigger);
+var people = document.getElementById("people");
+var contact = document.getElementById("contact");
+
+function updateHeader() {
+  if (!header) return;
+  var gold = false;
+  var white = false;
+  var vh = window.innerHeight;
+
+  if (point) {
+    var r = point.getBoundingClientRect();
+    if (r.top < vh * 0.5 && r.bottom > 100) gold = true;
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  if (people) {
+    var rp = people.getBoundingClientRect();
+    if (rp.top < vh * 0.7) white = true;
+  }
+  if (contact) {
+    var rc = contact.getBoundingClientRect();
+    if (rc.top < vh * 0.7) white = true;
+  }
+
+  header.classList.remove("is-gold", "is-white");
+  if (white) header.classList.add("is-white");
+  else if (gold) header.classList.add("is-gold");
 }
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("resize", updateHeader);
+updateHeader();
 })();
