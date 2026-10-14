@@ -1387,3 +1387,38 @@ h2 { font-size: clamp(42px, 5vw, 68px); }
 .site-header.is-gold .lang-btn.is-on {
   color: #9d1830 !important;
 }
+
+/* ========== Hide floating where label ========== */
+.where { display: none !important; }
+
+/* ========== Mobile: hamburger only ========== */
+@media (max-width: 800px) {
+  .menu-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    color: var(--bright) !important;
+    border: 1px solid var(--gold) !important;
+    border-radius: 999px !important;
+    padding: 8px 14px !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    z-index: 30 !important;
+  }
+  .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    flex-direction: column !important;
+    background: linear-gradient(180deg, #163056, #071424) !important;
+    border-bottom: 3px solid var(--gold) !important;
+    padding: 16px 20px 20px !important;
+    gap: 14px !important;
+    z-index: 25 !important;
+  }
+  .nav.is-open { display: flex !important; }
+}
