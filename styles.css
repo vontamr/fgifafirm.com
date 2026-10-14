@@ -1566,3 +1566,66 @@ h2 { font-size: clamp(42px, 5vw, 68px); }
     color: #071424 !important;
   }
 }
+
+/* ========== Language buttons clickable on mobile ========== */
+.lang-toggle {
+  position: relative;
+  z-index: 50 !important;
+  pointer-events: auto !important;
+}
+.lang-btn {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 32px;
+  padding: 4px 6px;
+}
+@media (max-width: 800px) {
+  .header-top {
+    z-index: 45 !important;
+    pointer-events: auto !important;
+  }
+  .lang-btn {
+    font-size: 13px !important;
+    padding: 6px 8px !important;
+  }
+}
+
+/* ========== Language toggle — always clickable ========== */
+.header-top {
+  position: relative !important;
+  z-index: 60 !important;
+  pointer-events: auto !important;
+}
+.lang-toggle {
+  position: relative !important;
+  z-index: 61 !important;
+  pointer-events: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+.lang-btn {
+  position: relative !important;
+  z-index: 62 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  color: var(--gold) !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+.lang-btn.is-on {
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+@media (max-width: 800px) {
+  .header-top { padding: 8px 16px !important; }
+  .lang-btn { font-size: 14px !important; padding: 10px 12px !important; }
+  .brand { z-index: 2 !important; }
+}

@@ -1,9 +1,7 @@
-
 (function () {
-// Always start at the top on refresh
-if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-window.scrollTo(0, 0);
-
+  // Always start at the top on refresh
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
 
   var where = document.getElementById("where");
 
@@ -250,11 +248,12 @@ window.scrollTo(0, 0);
       if (sheet) sheet.hidden = true;
     });
   });
+
   var typewriterText = "Clarity on the numbers. Confidence in the finding. A team that stays with the matter until it is resolved.";
   var typeTimer = null;
   var typeIndex = 0;
   var isTyping = false;
-  
+
   function stopTypewriter() {
     if (typeTimer) clearTimeout(typeTimer);
     typeTimer = null;
@@ -263,7 +262,7 @@ window.scrollTo(0, 0);
     var el = document.getElementById("point-typewriter");
     if (el) el.textContent = "";
   }
-  
+
   function startTypewriter() {
     var el = document.getElementById("point-typewriter");
     if (!el || isTyping) return;
@@ -283,7 +282,7 @@ window.scrollTo(0, 0);
     }
     typeTimer = setTimeout(type, 120);
   }
-  
+
   var pointCard = document.querySelector(".point-upgrade");
   if (pointCard && "IntersectionObserver" in window) {
     var obs = new IntersectionObserver(function (entries) {
@@ -297,6 +296,7 @@ window.scrollTo(0, 0);
     }, { threshold: 0.35 });
     obs.observe(pointCard);
   }
+
   // ========== Header color shifts ==========
   var header = document.querySelector(".site-header");
   var point = document.querySelector(".point-upgrade");
@@ -330,4 +330,167 @@ window.scrollTo(0, 0);
   window.addEventListener("scroll", updateHeader, { passive: true });
   window.addEventListener("resize", updateHeader);
   updateHeader();
+
+  // ========== Language switcher ==========
+  var translations = {
+    en: {
+      "menu-btn": "Menu",
+      "nav-services": "Services",
+      "nav-people": "People",
+      "nav-contact": "Contact",
+      "hero-kicker": "F.G.I. Forensic Accounting",
+      "hero-title": "Where integrity,<br>transparency & credibility count.",
+      "hero-sub": "Global audit · Forensic investigation · Assurance",
+      "btn-explore": "Explore services",
+      "btn-call": "Call 1-877-426-4718",
+      "point-kicker": "The point",
+      "point-h2": "The power of being understood.",
+      "btn-see": "See the work",
+      "point-gold": "Take charge of change and shape what’s next, with the team behind you.",
+      "point-sub": "Global audit. Forensic investigation. Assurance that holds up.",
+      "services-kicker": "Services",
+      "services-h2": "The work.",
+      "svc-investigations": "Financial Investigations",
+      "svc-compliance": "Corporate Compliance",
+      "svc-risk": "Risk Management",
+      "svc-riskadvisory": "Risk Advisory Services",
+      "svc-disputes": "Dispute Resolution",
+      "svc-litigation": "Litigation Support",
+      "svc-assurance": "Global Audit & Assurance",
+      "svc-tax": "Tax",
+      "svc-advisory": "Advisory Services",
+      "btn-talk": "Talk to the firm",
+      "people-kicker": "The people",
+      "people-h2": "Meet the people behind FGI.",
+      "contact-kicker": "Contact",
+      "contact-h2": "Speak to the firm.",
+      "contact-intro": "Tell us about the matter. We respond with the clarity the numbers require.",
+      "form-name": "Your name",
+      "form-company": "Company name",
+      "form-phone": "Phone number",
+      "form-email": "Email",
+      "form-message": "Message — describe the matter or what you need",
+      "btn-send": "Send message",
+      "thanks": "Message received. We will be in touch."
+    },
+    es: {
+      "menu-btn": "Menú",
+      "nav-services": "Servicios",
+      "nav-people": "Personas",
+      "nav-contact": "Contacto",
+      "hero-kicker": "F.G.I. Contabilidad Forense",
+      "hero-title": "Donde la integridad,<br>la transparencia y la credibilidad cuentan.",
+      "hero-sub": "Auditoría global · Investigación forense · Aseguramiento",
+      "btn-explore": "Explorar servicios",
+      "btn-call": "Llamar 1-877-426-4718",
+      "point-kicker": "El punto",
+      "point-h2": "El poder de ser comprendido.",
+      "btn-see": "Ver el trabajo",
+      "point-gold": "Tome el control del cambio y dé forma a lo que sigue, con el equipo detrás de usted.",
+      "point-sub": "Auditoría global. Investigación forense. Aseguramiento que se sostiene.",
+      "services-kicker": "Servicios",
+      "services-h2": "El trabajo.",
+      "svc-investigations": "Investigaciones financieras",
+      "svc-compliance": "Cumplimiento corporativo",
+      "svc-risk": "Gestión de riesgos",
+      "svc-riskadvisory": "Servicios de asesoría de riesgos",
+      "svc-disputes": "Resolución de disputas",
+      "svc-litigation": "Soporte en litigios",
+      "svc-assurance": "Auditoría y aseguramiento global",
+      "svc-tax": "Impuestos",
+      "svc-advisory": "Servicios de asesoría",
+      "btn-talk": "Hablar con la firma",
+      "people-kicker": "Las personas",
+      "people-h2": "Conozca a las personas detrás de FGI.",
+      "contact-kicker": "Contacto",
+      "contact-h2": "Hable con la firma.",
+      "contact-intro": "Cuéntenos sobre el asunto. Respondemos con la claridad que los números requieren.",
+      "form-name": "Su nombre",
+      "form-company": "Nombre de la empresa",
+      "form-phone": "Número de teléfono",
+      "form-email": "Correo electrónico",
+      "form-message": "Mensaje — describa el asunto o lo que necesita",
+      "btn-send": "Enviar mensaje",
+      "thanks": "Mensaje recibido. Nos pondremos en contacto."
+    },
+    fr: {
+      "menu-btn": "Menu",
+      "nav-services": "Services",
+      "nav-people": "Équipe",
+      "nav-contact": "Contact",
+      "hero-kicker": "F.G.I. Comptabilité judiciaire",
+      "hero-title": "Là où l’intégrité,<br>la transparence et la crédibilité comptent.",
+      "hero-sub": "Audit mondial · Investigation judiciaire · Assurance",
+      "btn-explore": "Explorer les services",
+      "btn-call": "Appeler 1-877-426-4718",
+      "point-kicker": "Le point",
+      "point-h2": "Le pouvoir d’être compris.",
+      "btn-see": "Voir le travail",
+      "point-gold": "Prenez le contrôle du changement et façonnez la suite, avec l’équipe derrière vous.",
+      "point-sub": "Audit mondial. Investigation judiciaire. Assurance qui tient.",
+      "services-kicker": "Services",
+      "services-h2": "Le travail.",
+      "svc-investigations": "Investigations financières",
+      "svc-compliance": "Conformité d’entreprise",
+      "svc-risk": "Gestion des risques",
+      "svc-riskadvisory": "Services de conseil en risques",
+      "svc-disputes": "Résolution des litiges",
+      "svc-litigation": "Soutien aux litiges",
+      "svc-assurance": "Audit et assurance mondiaux",
+      "svc-tax": "Fiscalité",
+      "svc-advisory": "Services de conseil",
+      "btn-talk": "Parler à la firme",
+      "people-kicker": "Les personnes",
+      "people-h2": "Rencontrez les personnes derrière FGI.",
+      "contact-kicker": "Contact",
+      "contact-h2": "Parlez à la firme.",
+      "contact-intro": "Parlez-nous du dossier. Nous répondons avec la clarté que les chiffres exigent.",
+      "form-name": "Votre nom",
+      "form-company": "Nom de l’entreprise",
+      "form-phone": "Numéro de téléphone",
+      "form-email": "E-mail",
+      "form-message": "Message — décrivez le dossier ou ce dont vous avez besoin",
+      "btn-send": "Envoyer le message",
+      "thanks": "Message reçu. Nous vous contacterons."
+    }
+  };
+
+  function applyLang(lang) {
+    var dict = translations[lang] || translations.en;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (!dict[key]) return;
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.placeholder = dict[key];
+      } else {
+        el.innerHTML = dict[key];
+      }
+    });
+    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+      btn.classList.toggle("is-on", btn.getAttribute("data-lang") === lang);
+    });
+    try { localStorage.setItem("fgi-lang", lang); } catch (e) {}
+    // Update typewriter text for the new language
+    if (lang === "es") typewriterText = "Claridad en los números. Confianza en el hallazgo. Un equipo que permanece con el asunto hasta resolverlo.";
+    else if (lang === "fr") typewriterText = "Clarté sur les chiffres. Confiance dans la conclusion. Une équipe qui reste avec le dossier jusqu’à sa résolution.";
+    else typewriterText = "Clarity on the numbers. Confidence in the finding. A team that stays with the matter until it is resolved.";
+    stopTypewriter();
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(function (btn) {
+    function handleLang(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var lang = btn.getAttribute("data-lang");
+      if (lang) applyLang(lang);
+    }
+    btn.addEventListener("click", handleLang);
+    btn.addEventListener("touchend", handleLang, { passive: false });
+  });
+
+  try {
+    var saved = localStorage.getItem("fgi-lang");
+    if (saved && translations[saved]) applyLang(saved);
+  } catch (e) {}
+
 })();
