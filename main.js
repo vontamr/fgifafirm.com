@@ -43,7 +43,61 @@
     },
     advisory: {
       title: "Advisory Services",
-      body: "<p>The next move for a middle-market leader.</p>"
+      body: "<p>Strategic advisory support — select a service for details.</p>"
+    }
+  };
+
+  var advisorySubs = {
+    menu: {
+      title: "Advisory Services",
+      body: [
+        "<p class=\"lead\">Strategic advisory support to help you mitigate risk, protect value and make informed decisions.</p>",
+        "<div class=\"assurance-grid\">",
+        "<button type=\"button\" class=\"assurance-card\" data-sub=\"riskadvisory\">",
+        "<span class=\"assurance-card-kicker\">Service</span>",
+        "<span class=\"assurance-card-title\">Risk Advisory Services</span>",
+        "<span class=\"assurance-card-desc\">Mitigate business risk · Protect enterprise value · Strengthen controls</span>",
+        "</button>",
+        "</div>"
+      ].join("")
+    },
+    riskadvisory: {
+      title: "Risk Advisory Services",
+      body: [
+        "<p class=\"lead\">Mitigate Business Risk and Protect Enterprise Value</p>",
+        "<p>We provide risk management services designed to help protect your business, support its continuity and enhance the value delivered to stakeholders.</p>",
+        "<p>We identify and assess risks that may affect your operations, financial position, compliance obligations and long-term objectives. Lessons from events such as the global banking crisis and the growth of cybercrime underscore the importance of timely risk identification, robust controls and appropriate mitigation measures.</p>",
+        "<p>Our approach is proactive. We provide ongoing support and guidance as your systems of internal control, governance and business processes evolve, helping you respond to emerging risks and changing requirements.</p>",
+        "<p>Drawing on our technical expertise and practical experience, we apply current methodologies and sound professional judgment to strengthen risk management and support informed decision-making.</p>",
+        "<button type=\"button\" class=\"assurance-back\" data-back-to=\"advisory\">← Back to Advisory Services</button>"
+      ].join("")
+    }
+  };
+
+  var caAdvisorySubs = {
+    menu: {
+      title: "Advisory Services",
+      body: [
+        "<p class=\"lead\">Strategic advisory support for Canadian organizations to mitigate risk, protect value and make informed decisions.</p>",
+        "<div class=\"assurance-grid\">",
+        "<button type=\"button\" class=\"assurance-card\" data-sub=\"riskadvisory\">",
+        "<span class=\"assurance-card-kicker\">Service</span>",
+        "<span class=\"assurance-card-title\">Risk Advisory Services</span>",
+        "<span class=\"assurance-card-desc\">Mitigate business risk · Protect enterprise value · Canadian frameworks</span>",
+        "</button>",
+        "</div>"
+      ].join("")
+    },
+    riskadvisory: {
+      title: "Risk Advisory Services",
+      body: [
+        "<p class=\"lead\">Mitigate Business Risk and Protect Enterprise Value in Canada</p>",
+        "<p>We provide risk management services designed to help protect your business, support its continuity and enhance the value delivered to stakeholders under Canadian frameworks.</p>",
+        "<p>We identify and assess risks that may affect your operations, financial position, compliance obligations and long-term objectives. Lessons from events such as the global banking crisis and the growth of cybercrime underscore the importance of timely risk identification, robust controls and appropriate mitigation measures.</p>",
+        "<p>Our approach is proactive. We provide ongoing support and guidance as your systems of internal control, governance and business processes evolve, helping you respond to emerging risks and changing requirements.</p>",
+        "<p>Drawing on our technical expertise and practical experience, we apply current methodologies and sound professional judgment to strengthen risk management and support informed decision-making.</p>",
+        "<button type=\"button\" class=\"assurance-back\" data-back-to=\"advisory\">← Back to Advisory Services</button>"
+      ].join("")
     }
   };
 
@@ -154,7 +208,7 @@
     },
     advisory: {
       title: "Advisory Services",
-      body: "<p>The next move for a middle-market leader operating in Canada.</p>"
+      body: "<p>Strategic advisory support for Canadian organizations — select a service for details.</p>"
     }
   };
 
@@ -250,7 +304,7 @@
   function openServiceModal(title, bodyHtml, kicker) {
     if (!modal || !modalTitle || !modalBody) return;
     modalTitle.textContent = title || "";
-    var clean = (bodyHtml || "").replace(/<button[^>]*class="assurance-back"[^>]*>[\s\S]*?<\/button>/gi, "");
+    var clean = bodyHtml || "";
     clean += '<div class="svc-modal-footer"><a class="btn gold" href="#contact">Talk to the firm</a></div>';
     modalBody.innerHTML = clean;
     if (modalKicker) modalKicker.textContent = kicker || "Services";
@@ -280,7 +334,23 @@
       if (card) {
         event.preventDefault();
         event.stopPropagation();
-        openAssuranceDetail(card.getAttribute("data-sub"));
+        var sub = card.getAttribute("data-sub");
+        if (currentServiceKey === "advisory") {
+          openAdvisoryDetail(sub);
+        } else {
+          openAssuranceDetail(sub);
+        }
+        return;
+      }
+      var backBtn = event.target.closest(".assurance-back");
+      if (backBtn) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (currentServiceKey === "advisory") {
+          openServiceDetail("advisory");
+        } else {
+          openServiceDetail("assurance");
+        }
         return;
       }
       var cta = event.target.closest(".svc-modal-footer a");
@@ -298,11 +368,23 @@
     openServiceModal(sub.title, sub.body, "Audit & Assurance");
   }
 
+  function openAdvisoryDetail(subKey) {
+    var data = currentLoc === "ca" ? caAdvisorySubs : advisorySubs;
+    var sub = data[subKey];
+    if (!sub || subKey === "menu") return;
+    openServiceModal(sub.title, sub.body, "Advisory Services");
+  }
+
   function openServiceDetail(key) {
     currentServiceKey = key;
     if (key === "assurance") {
       renderAssurance("menu");
       var data = currentLoc === "ca" ? caAssuranceSubs : assuranceSubs;
+      openServiceModal(data.menu.title, data.menu.body, "Services");
+      return;
+    }
+    if (key === "advisory") {
+      var data = currentLoc === "ca" ? caAdvisorySubs : advisorySubs;
       openServiceModal(data.menu.title, data.menu.body, "Services");
       return;
     }
