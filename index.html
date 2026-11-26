@@ -9,6 +9,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .tech-video {
+      margin-top: 1.5rem;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .tech-video video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -136,9 +153,10 @@
                 <li>Secure data environments</li>
               </ul>
             </div>
-            <div class="tech-video-placeholder">
-              <div class="video-icon">▶</div>
-              <p data-i18n="tech-video-note">Video coming soon — portraying how FGI + technology alliances deliver clarity.</p>
+            <div class="tech-video">
+              <video autoplay muted loop playsinline controls>
+                <source src="assets/fgi-tech-ai-final.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
         </div>
@@ -271,6 +289,7 @@
     <a href="https://fgifafirm.com">FGIFAFIRM.COM</a>
     <a href="#privacy" data-sheet="privacy">Privacy statement</a>
     <a href="#terms" data-sheet="terms">SMS terms</a>
+    <a href="#site-provider" data-sheet="site-provider">Site provider</a>
     <div class="socials">
       <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">in</a>
       <a href="https://x.com" target="_blank" rel="noopener" aria-label="X" class="social-icon">X</a>
@@ -299,6 +318,15 @@
       <p class="kicker">SMS</p>
       <h2>SMS terms of service</h2>
       <p>By opting into SMS from a web form or other medium, you are agreeing to receive SMS messages from F.G.I. Forensic Accounting Firm. This includes SMS messages for appointment reminders, file updates, and account notices. Message frequency varies. Message and data rates may apply. See the privacy policy at <a href="https://fgifafirm.com/#privacy">https://fgifafirm.com/#privacy</a>. Message HELP for help. Reply STOP to any message to opt out.</p>
+    </div>
+  </div>
+
+  <div class="sheet" id="site-provider" hidden>
+    <div class="sheet-card">
+      <button type="button" data-close>Close</button>
+      <p class="kicker">Site provider</p>
+      <h2>About site provider</h2>
+      <p>This site is provided by FGI, whose registered address is 300 Madison Avenue, New York; New York 10017. Telephone: <a href="tel:+18774264718">+1 (877) 426-4718</a>. For further information on this site, please <a href="#contact">contact us</a>.</p>
     </div>
   </div>
 
